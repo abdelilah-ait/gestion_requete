@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: gestion_requete
+        psr4_prefix: gestion_requete
+        src_path: app
