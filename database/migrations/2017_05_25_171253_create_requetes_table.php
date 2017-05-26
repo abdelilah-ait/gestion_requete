@@ -19,8 +19,8 @@ class CreateRequetesTable extends Migration {
 			$table->int('IDSousEntite');
 			$table->int('IDTheme');
 			$table->int('IDSousTheme');
-			$table->int('Numordre')->unique();
-			$table->int('NumCSTR')->unique();
+			$table->string('Numordre', 80)->unique();
+			$table->string('NumCSTR', 80)->unique();
 			$table->datetime('DateBO');
 			$table->datetime('DateCSTR');
 			$table->string('ObjetReq', 100);
