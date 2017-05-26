@@ -15,10 +15,10 @@ class CreateRequetesTable extends Migration {
 		Schema::create('requetes', function(Blueprint $table)
 		{
 			$table->increments('IDRequete');
-			$table->int('IDEntite');
-			$table->int('IDSousEntite');
-			$table->int('IDTheme');
-			$table->int('IDSousTheme');
+			$table->integer('IDEntite', false, true);
+			$table->integer('IDSousEntite', false, true);
+			$table->integer('IDTheme', false, true);
+			$table->integer('IDSousTheme', false, true);
 			$table->string('NumOrdre', 80)->unique();
 			$table->string('NumCSTR', 80)->unique();
 			$table->datetime('DateBO');

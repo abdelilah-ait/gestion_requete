@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSousentiteTable extends Migration {
+class CreateSousentitesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -15,7 +15,7 @@ class CreateSousentiteTable extends Migration {
 		Schema::create('sousentites', function(Blueprint $table)
 		{
 			$table->increments('IDSousEntite');
-			$table->int('IDEntite');
+			$table->integer('IDEntite', false, true);
 			$table->string('LibSousEntite', 60);
 			$table->string('slug');
 			$table->timestamps();

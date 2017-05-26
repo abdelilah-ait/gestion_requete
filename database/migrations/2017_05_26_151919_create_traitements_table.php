@@ -15,8 +15,8 @@ class CreateTraitementsTable extends Migration {
 		Schema::create('traitements', function(Blueprint $table)
 		{
 			$table->increments('IDTraitement');
-			$table->int('IDServiceTraitant');
-			$table->int('IDRequete');
+			$table->integer('IDServiceTraitant', false, true);
+			$table->integer('IDRequete', false, true);
 			$table->string('Consistance', 150);
 			$table->datetime('DateTraitement');
 			$table->string('slug');

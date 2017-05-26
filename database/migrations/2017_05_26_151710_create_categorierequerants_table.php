@@ -15,7 +15,7 @@ class CreateCategorierequerantsTable extends Migration {
 		Schema::create('categorierequerants', function(Blueprint $table)
 		{
 			$table->increments('IDCategorieRequerant');
-			$table->int('IDTypeRequerant');
+			$table->integer('IDTypeRequerant', false, true);
 			$table->string('LibCategorie', 50);
 			$table->string('slug');
 			$table->timestamps();

@@ -15,8 +15,8 @@ class CreateServicetraitantRequete extends Migration {
 		Schema::create('servicetraitant_requete', function(Blueprint $table)
 		{
 			$table->increments('IDServiceTraitant_Requete');
-			$table->int('IDServiceTraitant');
-			$table->int('IDRequete');
+			$table->integer('IDServiceTraitant', false, true);
+			$table->integer('IDRequete', false, true);
 			$table->string('ConsignesWali', 80);
 			$table->datetime('DateConsignesWali');
 			$table->string('ConsignesSG', 80);

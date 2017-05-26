@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSousthemeTable extends Migration {
+class CreateSousthemesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -15,7 +15,7 @@ class CreateSousthemeTable extends Migration {
 		Schema::create('sousthemes', function(Blueprint $table)
 		{
 			$table->increments('IDSousTheme');
-			$table->int('IDTheme');
+			$table->integer('IDTheme', false, true);
 			$table->string('LibSousTheme', 60);
 			$table->string('slug');
 			$table->timestamps();
