@@ -8,6 +8,7 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+  overflow: hidden;
 }
 body {
   margin: 0;
@@ -164,6 +165,7 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
 fieldset {
   padding: .35em .625em .75em;
   margin: 0 2px;
@@ -186,6 +188,11 @@ table {
 td,
 th {
   padding: 0;
+  /*width: 32px;*/
+}
+
+.col-sm-4 td{
+  width: 32px;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
@@ -260,6 +267,7 @@ th {
     border: 1px solid #ddd !important;
   }
 }
+
 @font-face {
   font-family: 'Glyphicons Halflings';
 
@@ -1612,6 +1620,9 @@ pre code {
 .row {
   margin-right: -15px;
   margin-left: -15px;
+  padding: inherit;
+  width: 1064px;
+  margin-left: 30px;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
@@ -1792,7 +1803,7 @@ pre code {
     width: 75%;
   }
   .col-sm-8 {
-    width: 66.66666667%;
+    width: 97.3%;
   }
   .col-sm-7 {
     width: 58.33333333%;
@@ -1805,6 +1816,7 @@ pre code {
   }
   .col-sm-4 {
     width: 33.33333333%;
+    margin-left: 65px;
   }
   .col-sm-3 {
     width: 25%;
@@ -1924,10 +1936,10 @@ pre code {
     margin-left: 25%;
   }
   .col-sm-offset-2 {
-    margin-left: 16.66666667%;
+    margin-left: -5.3%;
   }
   .col-sm-offset-1 {
-    margin-left: 8.33333333%;
+    /*margin-left: 8.33333333%;*/
   }
   .col-sm-offset-0 {
     margin-left: 0;
@@ -2566,10 +2578,10 @@ output {
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #66afe9;
+  border-color: #004c11;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0,76,17,0.2);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0,76,17,0.2);
 }
 .form-control::-moz-placeholder {
   color: #999;
@@ -2631,6 +2643,10 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+}
+
+label, input {
+  display: block;
 }
 .radio,
 .checkbox {
@@ -4098,7 +4114,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #ebebeb;
 }
 .nav-stacked > li {
   float: none;

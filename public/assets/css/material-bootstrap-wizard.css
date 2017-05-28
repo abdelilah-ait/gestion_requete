@@ -21,15 +21,15 @@ body {
 body.inverse {
   background: #333333;
 }
-body.inverse, body.inverse .form-control {
+body.inverse, body.inverse   {
   color: #ffffff;
 }
 body.inverse .modal,
-body.inverse .modal .form-control,
+body.inverse .modal  ,
 body.inverse .panel-default,
-body.inverse .panel-default .form-control,
+body.inverse .panel-default  ,
 body.inverse .card,
-body.inverse .card .form-control {
+body.inverse .card   {
   background-color: initial;
   color: initial;
 }
@@ -87,6 +87,10 @@ input[type="submit"]::-moz-focus-inner,
 select::-moz-focus-inner,
 input[type="file"] > input[type="button"]::-moz-focus-inner {
   outline: 0 !important;
+}
+
+label, input {
+  display: block;
 }
 
 .image-container {
@@ -178,6 +182,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   position: relative;
 }
 
+.wizard-navigation ul li:active {
+  background-color: #004c11;
+}
+
 h1, .h1 {
   font-size: 3.8em;
   line-height: 1.15em;
@@ -213,6 +221,7 @@ h6, .h6 {
 .card-title,
 .wizard-title {
   font-weight: 700;
+  color: #004c11;
 }
 .title,
 .title a,
@@ -255,17 +264,21 @@ h2.title {
 }
 
 .card {
-  background-color: #FFFFFF;
-  padding: 10px 0;
-  width: 100%;
-  border-radius: 6px;
-  color: rgba(0,0,0, 0.87);
-  background: #fff;
+  background-color: rgba(255, 255, 255, 0.78);
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 6px;
+    color: rgba(0,0,0, 0.87);
+    background: rgba(255, 255, 255, 0.75);
 }
 
 .wizard-card {
   min-height: 410px;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  margin-top: -92px;
+  margin-left: 74px;
+  padding: 0;
+  max-height: 800px;
 }
 .wizard-card .picture-container {
   position: relative;
@@ -299,7 +312,7 @@ h2.title {
   border-radius: 4px;
   color: #FFFFFF;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: bold;
 }
 .wizard-card[data-color="purple"] .moving-tab {
   background-color: #9c27b0;
@@ -312,7 +325,7 @@ h2.title {
   border-color: #9c27b0;
   color: #9c27b0;
 }
-.wizard-card[data-color="purple"] .form-group .form-control {
+.wizard-card[data-color="purple"] .form-group   {
   background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .wizard-card[data-color="purple"] .checkbox input[type=checkbox]:checked + .checkbox-material .check {
@@ -325,8 +338,8 @@ h2.title {
   border-color: #9c27b0;
 }
 .wizard-card[data-color="green"] .moving-tab {
-  background-color: #4caf50;
-  box-shadow: 0 16px 26px -10px rgba(76, 175, 80, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2);
+  background-color: #004c11;
+  box-shadow: 0 16px 26px -10px rgba(0, 70, 3, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(1, 105, 5, 0.2);
 }
 .wizard-card[data-color="green"] .picture:hover {
   border-color: #4caf50;
@@ -335,8 +348,9 @@ h2.title {
   border-color: #4caf50;
   color: #4caf50;
 }
-.wizard-card[data-color="green"] .form-group .form-control {
-  background-image: linear-gradient(#4caf50, #4caf50), linear-gradient(#D2D2D2, #D2D2D2);
+.wizard-card[data-color="green"] .form-group   {
+  margin-bottom: 28px;
+    margin-left: -27px;
 }
 .wizard-card[data-color="green"] .checkbox input[type=checkbox]:checked + .checkbox-material .check {
   background-color: #4caf50;
@@ -358,7 +372,7 @@ h2.title {
   border-color: #00bcd4;
   color: #00bcd4;
 }
-.wizard-card[data-color="blue"] .form-group .form-control {
+.wizard-card[data-color="blue"] .form-group   {
   background-image: linear-gradient(#00bcd4, #00bcd4), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .wizard-card[data-color="blue"] .checkbox input[type=checkbox]:checked + .checkbox-material .check {
@@ -381,7 +395,7 @@ h2.title {
   border-color: #ff9800;
   color: #ff9800;
 }
-.wizard-card[data-color="orange"] .form-group .form-control {
+.wizard-card[data-color="orange"] .form-group   {
   background-image: linear-gradient(#ff9800, #ff9800), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .wizard-card[data-color="orange"] .checkbox input[type=checkbox]:checked + .checkbox-material .check {
@@ -404,7 +418,7 @@ h2.title {
   border-color: #f44336;
   color: #f44336;
 }
-.wizard-card[data-color="red"] .form-group .form-control {
+.wizard-card[data-color="red"] .form-group   {
   background-image: linear-gradient(#f44336, #f44336), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .wizard-card[data-color="red"] .checkbox input[type=checkbox]:checked + .checkbox-material .check {
@@ -433,6 +447,23 @@ h2.title {
   min-height: 340px;
   padding: 20px 15px;
 }
+
+/* #tabgauche{
+  margin-left: 5px;
+} */
+
+#annee {
+  border: solid;
+  border-width: 1px;
+  border-color: #e2e2e2;
+  margin-left: 30px;
+}
+
+.bloc_content{
+  width: 100%;
+  height: 100%;
+}
+
 .wizard-card .wizard-footer {
   padding: 0 15px;
 }
@@ -444,7 +475,7 @@ h2.title {
 }
 .wizard-card .wizard-header {
   text-align: center;
-  padding: 25px 0 35px;
+  padding: 30px 0 30px;
 }
 .wizard-card .wizard-header h5 {
   margin: 5px 0 0;
@@ -458,7 +489,10 @@ h2.title {
 .wizard-card .info-text {
   text-align: center;
   font-weight: 300;
-  margin: 10px 0 30px;
+  margin: 10px 0 0;
+  font-size: 24px;
+  color: #004c11;
+  margin-right: 166px;
 }
 .wizard-card .choice {
   text-align: center;
@@ -499,6 +533,7 @@ h2.title {
 }
 .wizard-card .wizard-title {
   margin: 0;
+  color: #e87777;
 }
 
 legend {
@@ -512,7 +547,7 @@ output {
   line-height: 1.42857;
 }
 
-.form-control {
+  {
   height: 36px;
   padding: 7px 0;
   font-size: 14px;
@@ -520,10 +555,10 @@ output {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="date"].form-control,
-  input[type="time"].form-control,
-  input[type="datetime-local"].form-control,
-  input[type="month"].form-control {
+  input[type="date"] ,
+  input[type="time"] ,
+  input[type="datetime-local"] ,
+  input[type="month"]  {
     line-height: 36px;
   }
   input[type="date"].input-sm, .input-group-sm input[type="date"],
@@ -550,7 +585,7 @@ output {
   min-height: 20px;
 }
 
-.form-control-static {
+ -static {
   padding-top: 8px;
   padding-bottom: 8px;
   min-height: 34px;
@@ -572,21 +607,21 @@ output {
   height: auto;
 }
 
-.form-group-sm .form-control {
+.form-group-sm   {
   height: 24px;
   padding: 3px 0;
   font-size: 11px;
   line-height: 1.5;
 }
-.form-group-sm select.form-control {
+.form-group-sm select  {
   height: 24px;
   line-height: 24px;
 }
-.form-group-sm textarea.form-control,
-.form-group-sm select[multiple].form-control {
+.form-group-sm textarea ,
+.form-group-sm select[multiple]  {
   height: auto;
 }
-.form-group-sm .form-control-static {
+.form-group-sm  -static {
   height: 24px;
   min-height: 31px;
   padding: 4px 0;
@@ -610,21 +645,21 @@ output {
   height: auto;
 }
 
-.form-group-lg .form-control {
+.form-group-lg   {
   height: 44px;
   padding: 9px 0;
   font-size: 18px;
   line-height: 1.33333;
 }
-.form-group-lg select.form-control {
+.form-group-lg select  {
   height: 44px;
   line-height: 44px;
 }
-.form-group-lg textarea.form-control,
-.form-group-lg select[multiple].form-control {
+.form-group-lg textarea ,
+.form-group-lg select[multiple]  {
   height: auto;
 }
-.form-group-lg .form-control-static {
+.form-group-lg  -static {
   height: 44px;
   min-height: 38px;
   padding: 10px 0;
@@ -688,8 +723,8 @@ output {
   background-color: #e91e63;
 }
 
-.form-control,
-.form-group .form-control {
+ ,
+.form-group   {
   border: 0;
   background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
   background-size: 0 2px, 100% 1px;
@@ -702,30 +737,30 @@ output {
   border-radius: 0;
   font-weight: 400;
 }
-.form-control::-moz-placeholder,
-.form-group .form-control::-moz-placeholder {
+ ::-moz-placeholder,
+.form-group  ::-moz-placeholder {
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-control:-ms-input-placeholder,
-.form-group .form-control:-ms-input-placeholder {
+ :-ms-input-placeholder,
+.form-group  :-ms-input-placeholder {
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-control::-webkit-input-placeholder,
-.form-group .form-control::-webkit-input-placeholder {
+ ::-webkit-input-placeholder,
+.form-group  ::-webkit-input-placeholder {
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-control[readonly], .form-control[disabled], fieldset[disabled] .form-control,
-.form-group .form-control[readonly],
-.form-group .form-control[disabled], fieldset[disabled]
-.form-group .form-control {
+ [readonly],  [disabled], fieldset[disabled]  ,
+.form-group  [readonly],
+.form-group  [disabled], fieldset[disabled]
+.form-group   {
   background-color: transparent;
 }
-.form-control[disabled], fieldset[disabled] .form-control,
-.form-group .form-control[disabled], fieldset[disabled]
-.form-group .form-control {
+ [disabled], fieldset[disabled]  ,
+.form-group  [disabled], fieldset[disabled]
+.form-group   {
   background-image: none;
   border-bottom: 1px dotted #D2D2D2;
 }
@@ -748,32 +783,26 @@ output {
   position: absolute;
   display: none;
 }
-.form-group.is-focused .form-control {
-  outline: none;
-  background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
-  background-size: 100% 2px, 100% 1px;
-  box-shadow: none;
-  transition-duration: 0.3s;
-}
-.form-group.is-focused .form-control .material-input:after {
+
+.form-group.is-focused   .material-input:after {
   background-color: #9c27b0;
 }
-.form-group.is-focused.form-info .form-control {
+.form-group.is-focused.form-info   {
   background-image: linear-gradient(#00bcd4, #00bcd4), linear-gradient(#D2D2D2, #D2D2D2);
 }
-.form-group.is-focused.form-success .form-control {
+.form-group.is-focused.form-success   {
   background-image: linear-gradient(#4caf50, #4caf50), linear-gradient(#D2D2D2, #D2D2D2);
 }
-.form-group.is-focused.form-warning .form-control {
+.form-group.is-focused.form-warning   {
   background-image: linear-gradient(#ff9800, #ff9800), linear-gradient(#D2D2D2, #D2D2D2);
 }
-.form-group.is-focused.form-danger .form-control {
+.form-group.is-focused.form-danger   {
   background-image: linear-gradient(#f44336, #f44336), linear-gradient(#D2D2D2, #D2D2D2);
 }
-.form-group.is-focused.form-rose .form-control {
+.form-group.is-focused.form-rose   {
   background-image: linear-gradient(#e91e63, #e91e63), linear-gradient(#D2D2D2, #D2D2D2);
 }
-.form-group.is-focused.form-white .form-control {
+.form-group.is-focused.form-white   {
   background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .form-group.is-focused.label-placeholder label,
@@ -783,40 +812,40 @@ output {
 .form-group.is-focused .help-block {
   display: block;
 }
-.form-group.has-warning .form-control {
+.form-group.has-warning   {
   box-shadow: none;
 }
-.form-group.has-warning.is-focused .form-control {
+.form-group.has-warning.is-focused   {
   background-image: linear-gradient(#ff9800, #ff9800), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .form-group.has-warning label.control-label,
 .form-group.has-warning .help-block {
   color: #ff9800;
 }
-.form-group.has-error .form-control {
+.form-group.has-error   {
   box-shadow: none;
 }
-.form-group.has-error.is-focused .form-control {
+.form-group.has-error.is-focused   {
   background-image: linear-gradient(#f44336, #f44336), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .form-group.has-error label.control-label,
 .form-group.has-error .help-block {
   color: #f44336;
 }
-.form-group.has-success .form-control {
+.form-group.has-success   {
   box-shadow: none;
 }
-.form-group.has-success.is-focused .form-control {
+.form-group.has-success.is-focused   {
   background-image: linear-gradient(#4caf50, #4caf50), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .form-group.has-success label.control-label,
 .form-group.has-success .help-block {
   color: #4caf50;
 }
-.form-group.has-info .form-control {
+.form-group.has-info   {
   box-shadow: none;
 }
-.form-group.has-info.is-focused .form-control {
+.form-group.has-info.is-focused   {
   background-image: linear-gradient(#00bcd4, #00bcd4), linear-gradient(#D2D2D2, #D2D2D2);
 }
 .form-group.has-info label.control-label,
@@ -826,7 +855,7 @@ output {
 .form-group textarea {
   resize: none;
 }
-.form-group textarea ~ .form-control-highlight {
+.form-group textarea ~  -highlight {
   margin-top: -11px;
 }
 .form-group select {
@@ -836,22 +865,22 @@ output {
   display: none;
 }
 
-.form-control {
+  {
   margin-bottom: 7px;
 }
-.form-control::-moz-placeholder {
+ ::-moz-placeholder {
   font-size: 14px;
   line-height: 1.42857;
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-control:-ms-input-placeholder {
+ :-ms-input-placeholder {
   font-size: 14px;
   line-height: 1.42857;
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-control::-webkit-input-placeholder {
+ ::-webkit-input-placeholder {
   font-size: 14px;
   line-height: 1.42857;
   color: #AAAAAA;
@@ -884,22 +913,22 @@ label.control-label {
   padding-bottom: 7px;
   margin: 27px 0 0 0;
 }
-.form-group .form-control {
+.form-group   {
   margin-bottom: 7px;
 }
-.form-group .form-control::-moz-placeholder {
+.form-group  ::-moz-placeholder {
   font-size: 14px;
   line-height: 1.42857;
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-group .form-control:-ms-input-placeholder {
+.form-group  :-ms-input-placeholder {
   font-size: 14px;
   line-height: 1.42857;
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-group .form-control::-webkit-input-placeholder {
+.form-group  ::-webkit-input-placeholder {
   font-size: 14px;
   line-height: 1.42857;
   color: #AAAAAA;
@@ -935,7 +964,7 @@ label.control-label {
   font-size: 11px;
   line-height: 1.07143;
 }
-.form-group.label-floating input.form-control:-webkit-autofill ~ label.control-label label.control-label {
+.form-group.label-floating input :-webkit-autofill ~ label.control-label label.control-label {
   top: -28px;
   left: 0;
   font-size: 11px;
@@ -946,22 +975,22 @@ label.control-label {
   padding-bottom: 3px;
   margin: 21px 0 0 0;
 }
-.form-group.form-group-sm .form-control {
+.form-group.form-group-sm   {
   margin-bottom: 3px;
 }
-.form-group.form-group-sm .form-control::-moz-placeholder {
+.form-group.form-group-sm  ::-moz-placeholder {
   font-size: 11px;
   line-height: 1.5;
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-group.form-group-sm .form-control:-ms-input-placeholder {
+.form-group.form-group-sm  :-ms-input-placeholder {
   font-size: 11px;
   line-height: 1.5;
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-group.form-group-sm .form-control::-webkit-input-placeholder {
+.form-group.form-group-sm  ::-webkit-input-placeholder {
   font-size: 11px;
   line-height: 1.5;
   color: #AAAAAA;
@@ -997,7 +1026,7 @@ label.control-label {
   font-size: 9px;
   line-height: 1.125;
 }
-.form-group.form-group-sm.label-floating input.form-control:-webkit-autofill ~ label.control-label label.control-label {
+.form-group.form-group-sm.label-floating input :-webkit-autofill ~ label.control-label label.control-label {
   top: -25px;
   left: 0;
   font-size: 9px;
@@ -1008,22 +1037,22 @@ label.control-label {
   padding-bottom: 9px;
   margin: 30px 0 0 0;
 }
-.form-group.form-group-lg .form-control {
+.form-group.form-group-lg   {
   margin-bottom: 9px;
 }
-.form-group.form-group-lg .form-control::-moz-placeholder {
+.form-group.form-group-lg  ::-moz-placeholder {
   font-size: 18px;
   line-height: 1.33333;
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-group.form-group-lg .form-control:-ms-input-placeholder {
+.form-group.form-group-lg  :-ms-input-placeholder {
   font-size: 18px;
   line-height: 1.33333;
   color: #AAAAAA;
   font-weight: 400;
 }
-.form-group.form-group-lg .form-control::-webkit-input-placeholder {
+.form-group.form-group-lg  ::-webkit-input-placeholder {
   font-size: 18px;
   line-height: 1.33333;
   color: #AAAAAA;
@@ -1059,23 +1088,23 @@ label.control-label {
   font-size: 14px;
   line-height: 1.0;
 }
-.form-group.form-group-lg.label-floating input.form-control:-webkit-autofill ~ label.control-label label.control-label {
+.form-group.form-group-lg.label-floating input :-webkit-autofill ~ label.control-label label.control-label {
   top: -32px;
   left: 0;
   font-size: 14px;
   line-height: 1.0;
 }
 
-select.form-control {
+select  {
   border: 0;
   box-shadow: none;
   border-radius: 0;
 }
-.form-group.is-focused select.form-control {
+.form-group.is-focused select  {
   box-shadow: none;
   border-color: #D2D2D2;
 }
-select.form-control[multiple], .form-group.is-focused select.form-control[multiple] {
+select [multiple], .form-group.is-focused select [multiple] {
   height: 85px;
 }
 
@@ -1111,14 +1140,14 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   z-index: 100;
 }
 
-.form-control-feedback {
+ -feedback {
   opacity: 0;
 }
-.has-success .form-control-feedback {
+.has-success  -feedback {
   color: #4caf50;
   opacity: 1;
 }
-.has-error .form-control-feedback {
+.has-error  -feedback {
   color: #f44336;
   opacity: 1;
 }
@@ -1207,17 +1236,22 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
 }
 .btn.btn-success {
   box-shadow: 0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12);
+  background-color: #efaeae;
+  /* color: #fff; */
+    color: #717171;
+    font-size: 0.9em;
+    font-weight: bold;
 }
-.btn.btn-success, .btn.btn-success:hover, .btn.btn-success:focus, .btn.btn-success:active, .btn.btn-success.active, .btn.btn-success:active:focus, .btn.btn-success:active:hover, .btn.btn-success.active:focus, .btn.btn-success.active:hover, .open > .btn.btn-success.dropdown-toggle, .open > .btn.btn-success.dropdown-toggle:focus, .open > .btn.btn-success.dropdown-toggle:hover {
-  background-color: #4caf50;
-  color: #FFFFFF;
+
+.btn.btn-success:hover, .btn.btn-success:focus, .btn.btn-success:active, .btn.btn-success.active, .btn.btn-success:active:focus, .btn.btn-success:active:hover, .btn.btn-success.active:focus, .btn.btn-success.active:hover, .open > .btn.btn-success.dropdown-toggle, .open > .btn.btn-success.dropdown-toggle:focus, .open > .btn.btn-success.dropdown-toggle:hover {
+  background-color: #e87777;
 }
-.btn.btn-success:focus, .btn.btn-success:active, .btn.btn-success:hover {
+/* .btn.btn-success:focus, .btn.btn-success:active, .btn.btn-success:hover {
   box-shadow: 0 14px 26px -12px rgba(76, 175, 80, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2);
 }
 .btn.btn-success.disabled, .btn.btn-success.disabled:hover, .btn.btn-success.disabled:focus, .btn.btn-success.disabled.focus, .btn.btn-success.disabled:active, .btn.btn-success.disabled.active, .btn.btn-success:disabled, .btn.btn-success:disabled:hover, .btn.btn-success:disabled:focus, .btn.btn-success:disabled.focus, .btn.btn-success:disabled:active, .btn.btn-success:disabled.active, .btn.btn-success[disabled], .btn.btn-success[disabled]:hover, .btn.btn-success[disabled]:focus, .btn.btn-success[disabled].focus, .btn.btn-success[disabled]:active, .btn.btn-success[disabled].active, fieldset[disabled] .btn.btn-success, fieldset[disabled] .btn.btn-success:hover, fieldset[disabled] .btn.btn-success:focus, fieldset[disabled] .btn.btn-success.focus, fieldset[disabled] .btn.btn-success:active, fieldset[disabled] .btn.btn-success.active {
   box-shadow: none;
-}
+} */
 .btn.btn-success.btn-simple {
   background-color: transparent;
   color: #4caf50;
@@ -1369,13 +1403,13 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   text-align: center;
   color: #555555 !important;
 }
-.nav-pills > li.active > a,
+/* .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus,
 .nav-pills > li > a:hover,
 .nav-pills > li > a:focus {
   background-color: inherit;
-}
+} */
 .nav-pills > li i {
   display: block;
   font-size: 30px;

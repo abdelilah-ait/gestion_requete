@@ -22,7 +22,12 @@
 }
 
 body{
-    background-color: #CCCCCC;
+    /*background-color: #CCCCCC;*/
+    background: url('../../assets/img/mosaic_background.jpg') no-repeat center center fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .section .wizard-card{
