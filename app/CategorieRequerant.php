@@ -18,4 +18,13 @@ class CategorieRequerant extends Model {
 	 */
 	protected $fillable = ['IDCategorieRequerant', 'IDTypeRequerant', 'LibCategorie', 'slug'];
 
+	public function requerants()
+    {
+        return $this->hasMany('App\Requerant');
+    }
+
+    public function typerequerant()
+    {
+        return $this->belongsTo('App\TypeRequerant');
+    }
 }

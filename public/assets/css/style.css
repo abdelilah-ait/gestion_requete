@@ -24,6 +24,7 @@ background-repeat:no-repeat; */
     background-size: cover;
   color: #777;
 }
+
 img {
   vertical-align: middle;
   max-width: 100%;
@@ -256,4 +257,7 @@ input:valid + .label {
     content: "\e008";
     font-size: -webkit-xxx-large;
 }
+
+.lab{width: 117px}.inp{width: 500px}.lab, .inp{display: inline-block}
+
 

@@ -18,8 +18,15 @@
 	<link href="assets/css/demo.css" rel="stylesheet" />
 </head>
 <body>
-	@yield('content')
-
+		<div class="container" style="margin-right: 222px;">
+			<div class="navbar" style="width: 1169px;margin-left: 73px;">
+				<div class="logo"></div>
+				<div class="titre_haut"><span>Suivi et traitement des requetes</span></div>
+			</div>
+			<div class="tt">
+				@yield('content')
+			</div>
+		</div>
 	<!--   Core JS Files   -->
     <script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>

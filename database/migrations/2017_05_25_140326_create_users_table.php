@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration {
 			$table->string('slug');
 			$table->rememberToken();
 			$table->timestamps();
+			
+			
 		});
 	}
 

@@ -522,10 +522,24 @@ body{
 }
 
 .navbar, .navbar.navbar-default {
-  background-color: #9c27b0;
-  color: #FFFFFF;
+  background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+   height: 200px;
+  /*color: #FFFFFF;*/
 }
 
+.logo {
+  width: 165px;
+  height : 180px;
+  background: url('../../assets/img/logo_maroc.png');
+  margin-left: 20px;
+}
+
+.logo, .titre_haut {
+  display: inline-block;
+  margin: 0;
+}
 .navbar .navbar-nav > li > a {
   color: inherit;
   padding-top: 15px;

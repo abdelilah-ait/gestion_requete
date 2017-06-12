@@ -18,20 +18,13 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+					<form class="form-horizontal" role="form" method="post" action="{{route('validateregister')}}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
+							<label class="col-md-4 control-label">Login</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<input type="text" class="form-control" name="login" value="{{ old('login') }}">
 							</div>
 						</div>
 
@@ -41,11 +34,32 @@
 								<input type="password" class="form-control" name="password">
 							</div>
 						</div>
-
+						
 						<div class="form-group">
 							<label class="col-md-4 control-label">Confirm Password</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password_confirmation">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Label court</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="libcourt">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Label long</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="liblong">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">NumPS</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="numps">
 							</div>
 						</div>
 

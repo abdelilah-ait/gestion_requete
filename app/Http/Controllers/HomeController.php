@@ -1,5 +1,10 @@
 <?php namespace gestion_requete\Http\Controllers;
 
+use Illuminate\Http\Request;
+use gestion_requete\Theme;
+use gestion_requete\Entite;
+use gestion_requete\CategorieRequerant;
+
 class HomeController extends Controller {
 
 	/*
@@ -18,9 +23,28 @@ class HomeController extends Controller {
 	// 	$this->middleware('auth');
 	// }
 	
-	public function index()
+	public function index(Request $request)
 	{
-		return view('visual/home');
+		$themes = Theme::all();
+		$entites = Entite::all();
+		$categorierequerants = CategorieRequerant::where('IDTypeRequerant','=',1)->get();
+		return view('visual/home', compact('themes','entites','categorierequerants'));
+		// return view('visual/home');
+	}
+
+	public function createrequete(Request $request)
+	{
+		return view('visual/createsuccess');
+		
+	}
+
+	public function soustheme($id)
+	{
+		$theme = Theme::find($id);
+		die($id);
+		$sousthemes = $theme->sousthemes;
+
+		return response()->json(['response' => $sousthemes]);
 	}
 
 	/*public function test($name)

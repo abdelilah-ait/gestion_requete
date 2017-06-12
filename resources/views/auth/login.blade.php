@@ -1,4 +1,4 @@
-@extends('../app')
+@extends('app')
 
 @section('content')
     <div class="container">
@@ -7,7 +7,8 @@
           <img src="../../assets/img/login.png" alt="Avatar" /> 
               <!-- <span class="fa fa-user-circle fa-5x" aria-hidden="true"></span> -->
         </button>
-        <form action="" method="post">
+        <form action="{{route('validatelogin')}}" method="post">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="profile__form">
               <div class="profile__fields">
                 <div class="title">
@@ -17,7 +18,7 @@
                   <img src="../../assets/img/title.png" alt="Avatar" />
                 </div>
                 <div class="field">
-                  <input type="text" id="fieldUser" name="user" class="input" required pattern=.*\S.* />
+                  <input type="text" id="fieldUser" name="user" class="input" value="{{ old('user') }}" required pattern=.*\S.* />
                   <label for="fieldUser" class="label">Nom d'utilisateur</label>
                 </div>
                 <div class="field">

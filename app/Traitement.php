@@ -18,5 +18,15 @@ class Traitement extends Model {
 	 */
 	protected $fillable = ['IDTraitement', 'IDServiceTraitant', 'IDRequete', 'Consistance', 'DateTraitement', 'slug'];
 
+	public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function requete()
+    {
+        return $this->belongsTo('App\Requete');
+    }
+
 
 }

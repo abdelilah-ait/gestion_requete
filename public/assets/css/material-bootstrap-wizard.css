@@ -90,7 +90,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 label, input {
-  display: block;
+  display: inline-block;
 }
 
 .image-container {
@@ -349,7 +349,7 @@ h2.title {
   color: #4caf50;
 }
 .wizard-card[data-color="green"] .form-group   {
-  margin-bottom: 28px;
+  margin-bottom: 8%;
     margin-left: -27px;
 }
 .wizard-card[data-color="green"] .checkbox input[type=checkbox]:checked + .checkbox-material .check {
@@ -445,6 +445,9 @@ h2.title {
 }
 .wizard-card .tab-content {
   min-height: 340px;
+  max-height: 380px;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 20px 15px;
 }
 
@@ -457,6 +460,16 @@ h2.title {
   border-width: 1px;
   border-color: #e2e2e2;
   margin-left: 30px;
+}
+
+#DSR{
+    width: 151px;
+    margin-left: 37px;
+}
+
+#ACP{
+    width: 151px;
+    margin-left: 37px;
 }
 
 .bloc_content{

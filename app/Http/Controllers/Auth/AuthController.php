@@ -2,6 +2,7 @@
 
 use gestion_requete\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use gestion_requete\User;
 use Illuminate\Http\Request;
@@ -28,17 +29,50 @@ class AuthController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
 	 * @return void
 	 */
-	public function __construct(Guard $auth)
+	public function __construct(Guard $auth, Registrar $registrar)
 	{
 		$this->auth = $auth;
+		$this->registrar = $registrar;
+		$this->redirectTo = route('home');
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
-	public function getLogin()
+	// *
+	//  * Show the application login form.
+	//  *
+	//  * @return \Illuminate\Http\Response
+	 
+	// // public function getLogin()
+	// // {
+	// // 	return view('../auth/login');
+	// // }
+
+	// *
+	//  * Handle a login request to the application.
+	//  *
+	//  * @param  \Illuminate\Http\Request  $request
+	//  * @return \Illuminate\Http\Response
+	 
+	/*public function postLogin(Request $request)
 	{
-		return view('../auth/login');
-	}
+		$this->validate($request, [
+			'email' => 'required', 'password' => 'required',
+		]);
+
+		$credentials = $request->only('email', 'password');
+
+		if ($this->auth->attempt($credentials, $request->has('remember')))
+		{
+			return redirect()->intended($this->redirectPath());
+		}
+
+		return redirect($this->loginPath())
+					->withInput($request->only('email'))
+					->withErrors([
+						'email' => 'These credentials do not match our records.',
+					]);
+	}*/
 
 	/*public function getRegister(Request $request)
 	{

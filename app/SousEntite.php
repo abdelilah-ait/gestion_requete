@@ -18,4 +18,14 @@ class SousEntite extends Model {
 	 */
 	protected $fillable = ['IDSousEntite', 'IDEntite', 'LibSousEntite', 'slug'];
 
+	public function entite()
+    {
+        return $this->belongsTo('App\Entite');
+    }
+
+    public function requetes()
+    {
+        return $this->hasMany('App\Requete');
+    }
+
 }

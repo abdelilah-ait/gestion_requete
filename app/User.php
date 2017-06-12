@@ -17,12 +17,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $table = 'users';
 
+	protected $primaryKey = 'IDServiceTraitant';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['IDServiceTraitant', 'Libcourt', 'LibLong', 'password','Email', 'NumPS', 'slug'];
+	protected $fillable = ['IDServiceTraitant', 'login', 'libcourt', 'liblong', 'password', 'numps', 'slug'];
 	
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -30,5 +32,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+
+	 public function traitements()
+    {
+        return $this->hasMany('App\Traitement');
+    }
+
+    public function requetes()
+    {
+        return $this->belongsToMany('App\Requete');
+    }
+
+
+
 
 }

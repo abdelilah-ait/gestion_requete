@@ -18,5 +18,13 @@ class Theme extends Model {
 	 */
 	protected $fillable = ['IDTheme', 'LibTheme', 'slug'];
 
+	public function requetes()
+    {
+        return $this->hasMany('App\Requete');
+    }
 
+    public function sousthemes()
+    {
+        return $this->hasMany('App\SousTheme');
+    }
 }

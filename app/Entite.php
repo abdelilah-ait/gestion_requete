@@ -18,4 +18,13 @@ class Entite extends Model {
 	 */
 	protected $fillable = ['IDEntite', 'LibEntite', 'slug'];
 
+	public function requetes()
+    {
+        return $this->hasMany('App\Requete');
+    }
+
+    public function sousentite()
+    {
+        return $this->hasMany('App\SousEntite');
+    }
 }

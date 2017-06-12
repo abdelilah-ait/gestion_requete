@@ -11,13 +11,36 @@
 |
 */
 
-// Route::controllers([
-// 	'auth' => 'Auth\AuthController',
-// 	'password' => 'Auth\PasswordController'
-// ]);
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController'
+]);
+
 Route::get('/', [
 	'as' => 'home',
 	'uses' => 'HomeController@index']);
+
+Route::get('themes/{id}/soustheme', [
+	'as' => 'soustheme',
+	'uses' => 'HomeController@soustheme']);
+
+Route::get('auth/login', [
+	'as' => 'login',
+	'uses' => 'Auth\AuthController@getLogin()']);
+
+Route::post('auth/login', [
+	'as' => 'validatelogin',
+	'uses' => 'Auth\AuthController@postLogin()']);
+
+Route::get('auth/logout', [
+	'as' => 'logout',
+	'uses' => 'Auth\AuthController@getLogout()']);
+
+Route::post('/AddRequete', [
+	'as' => 'AddRequete',
+	'user' => 'HomeController@createrequete'
+	]);
+
 /*Route::get('/', [
 	'as' => 'listLink',
 	'uses' => 'LinkController@listLink']);
