@@ -11,6 +11,8 @@ class SousTheme extends Model {
 	 */
 	protected $table = 'sousthemes';
 
+	protected $primaryKey = 'IDSousTheme';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -20,11 +22,11 @@ class SousTheme extends Model {
 
 	public function requetes()
     {
-        return $this->hasMany('App\Requete');
+        return $this->hasMany('gestion_requete\Requete','IDSousTheme','IDSousTheme');
     }
 
     public function theme()
     {
-        return $this->belongsTo('App\Theme');
+        return $this->belongsTo('gestion_requete\Theme','IDTheme');
     }
 }

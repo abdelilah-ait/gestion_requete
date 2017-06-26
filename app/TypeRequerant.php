@@ -11,6 +11,8 @@ class TypeRequerant extends Model {
 	 */
 	protected $table = 'typerequerants';
 
+	protected $primaryKey = 'IDTypeRequerant';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -20,11 +22,11 @@ class TypeRequerant extends Model {
 
 	public function requerants()
     {
-        return $this->hasMany('App\Requerant');
+        return $this->hasMany('gestion_requete\Requerant','IDTypeRequerant','IDTypeRequerant');
     }
 
     public function categorierequerants()
     {
-        return $this->hasMany('App\CategorieRequerant');
+        return $this->hasMany('gestion_requete\CategorieRequerant','IDTypeRequerant','IDTypeRequerant');
     }
 }

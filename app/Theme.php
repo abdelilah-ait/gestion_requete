@@ -11,6 +11,8 @@ class Theme extends Model {
 	 */
 	protected $table = 'themes';
 
+	protected $primaryKey = 'IDTheme';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -20,11 +22,11 @@ class Theme extends Model {
 
 	public function requetes()
     {
-        return $this->hasMany('App\Requete');
+        return $this->hasMany('gestion_requete\Requete','IDTheme','IDTheme');
     }
 
     public function sousthemes()
     {
-        return $this->hasMany('App\SousTheme');
+        return $this->hasMany('gestion_requete\SousTheme','IDTheme','IDTheme');
     }
 }

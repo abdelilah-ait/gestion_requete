@@ -522,18 +522,17 @@ body{
 }
 
 .navbar, .navbar.navbar-default {
-  background-color: transparent;
-   background: transparent;
+  background-color: #004c11;
+   background: #004c11;
    border-color: transparent;
    height: 200px;
   /*color: #FFFFFF;*/
 }
 
 .logo {
-  width: 165px;
-  height : 180px;
-  background: url('../../assets/img/logo_maroc.png');
-  margin-left: 20px;
+  width: 100px;
+  height : 115px;
+  background: url('../../assets/img/logo_maroc_nav.png');
 }
 
 .logo, .titre_haut {

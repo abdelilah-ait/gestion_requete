@@ -370,6 +370,13 @@
 .fa-pencil:before {
   content: "\f040";
 }
+
+
+.fa-pencil:focus{
+  border:0;
+}
+
+
 .fa-map-marker:before {
   content: "\f041";
 }

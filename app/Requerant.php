@@ -11,6 +11,8 @@ class Requerant extends Model {
 	 */
 	protected $table = 'requerants';
 
+	protected $primaryKey = 'IDRequerant';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -20,16 +22,21 @@ class Requerant extends Model {
 
 	public function requetes()
     {
-        return $this->hasMany('App\Requete');
+        return $this->hasMany('gestion_requete\Requete','IDRequerant','IDRequerant');
     }
 
     public function typerequerant()
     {
-        return $this->belongsTo('App\TypeRequerant');
+        return $this->belongsTo('gestion_requete\TypeRequerant','IDTypeRequerant');
     }
 
     public function categorierequerant()
     {
-        return $this->belongsTo('App\CategorieRequerant');
+        return $this->belongsTo('App\CategorieRequerant','IDCategorieRequerant');
+    }
+
+    public function secteur_activites()
+    {
+        return $this->belongsTo('App\SecteurActivite','IdSecteurActivite');
     }
 }

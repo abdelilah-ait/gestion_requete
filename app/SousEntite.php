@@ -11,6 +11,8 @@ class SousEntite extends Model {
 	 */
 	protected $table = 'sousentites';
 
+	protected $primaryKey = 'IDSousEntite';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -20,12 +22,12 @@ class SousEntite extends Model {
 
 	public function entite()
     {
-        return $this->belongsTo('App\Entite');
+        return $this->belongsTo('gestion_requete\Entite', 'IDEntite');
     }
 
     public function requetes()
     {
-        return $this->hasMany('App\Requete');
+        return $this->hasMany('gestion_requete\Requete','IDSousEntite','IDSousEntite');
     }
 
 }

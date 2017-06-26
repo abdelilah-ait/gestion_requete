@@ -11,21 +11,28 @@ class Requete extends Model {
 	 */
 	protected $table = 'requetes';
 
+    protected $primaryKey = 'IDRequete';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['IDRequete', 'IDEntite', 'IDSousEntite', 'IDTheme','IDSousTheme', 'NumOrdre', 'NumCSTR', 'DateBO', 'DateCSTR','ObjetReq', 'Resume', 'ContreQui', 'Importance', 'slug' ];
+	protected $fillable = ['IDRequete', 'IDEntite', 'IDSousEntite', 'IDTheme','IDSousTheme', 'NumOrdre', 'NumCSTR', 'DateBO', 'DateCSTR','ObjetReq', 'Resume', 'ContreQui', 'slug'];
 
 	public function traitements()
     {
-        return $this->hasMany('App\Traitement');
+        return $this->hasMany('gestion_requete\Traitement','IDRequete','IDRequete');
     }
 
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('gestion_requete\User','servicetraitant_requete','IDRequete','IdServiceTraitant');
+    }
+
+    public function statuts()
+    {
+        return $this->belongsToMany('gestion_requete\Statut','requete_statut','IDRequete','IDStatut');
     }
 
     public function sousentite()

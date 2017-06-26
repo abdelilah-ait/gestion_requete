@@ -7,7 +7,7 @@
           <img src="../../assets/img/login.png" alt="Avatar" /> 
               <!-- <span class="fa fa-user-circle fa-5x" aria-hidden="true"></span> -->
         </button>
-        <form action="{{route('validatelogin')}}" method="post">
+        <form action="{{route('validatelogin')}}" method="POST">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="profile__form">
               <div class="profile__fields">
@@ -18,8 +18,15 @@
                   <img src="../../assets/img/title.png" alt="Avatar" />
                 </div>
                 <div class="field">
-                  <input type="text" id="fieldUser" name="user" class="input" value="{{ old('user') }}" required pattern=.*\S.* />
-                  <label for="fieldUser" class="label">Nom d'utilisateur</label>
+                  <input type="email" id="fieldUser" name="email" class="input" value="{{ old('email') }}" required pattern=.*\S.* />
+                  <label for="fieldUser" class="label">Email</label>
+                  
+                  {{-- @if ($errors->has('login'))
+                    <span class="help-block">
+                        <strong>{{$errors->first('login')}}</strong>
+                    </span>
+                  @endif --}}
+
                 </div>
                 <div class="field">
                   <input type="password" id="fieldPassword" name="password" class="input" required pattern=.*\S.* />

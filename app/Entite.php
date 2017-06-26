@@ -11,6 +11,8 @@ class Entite extends Model {
 	 */
 	protected $table = 'entites';
 
+	protected $primaryKey = 'IDEntite';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -20,11 +22,11 @@ class Entite extends Model {
 
 	public function requetes()
     {
-        return $this->hasMany('App\Requete');
+        return $this->hasMany('gestion_requete\Requete','IDEntite','IDEntite');
     }
 
-    public function sousentite()
+    public function sousentites()
     {
-        return $this->hasMany('App\SousEntite');
+        return $this->hasMany('gestion_requete\SousEntite', 'IDEntite', 'IDEntite');
     }
 }

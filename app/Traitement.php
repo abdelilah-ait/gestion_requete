@@ -11,6 +11,8 @@ class Traitement extends Model {
 	 */
 	protected $table = 'traitements';
 
+	protected $primaryKey = 'IDTraitement';
+
 	/**
 	 * The attributes that are mass assignable.
 	 *
@@ -20,12 +22,12 @@ class Traitement extends Model {
 
 	public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('gestion_requete\User','IdServiceTraitant');
     }
 
     public function requete()
     {
-        return $this->belongsTo('App\Requete');
+        return $this->belongsTo('gestion_requete\Requete','IDRequete');
     }
 
 

@@ -18,28 +18,54 @@ Route::controllers([
 
 Route::get('/', [
 	'as' => 'home',
-	'uses' => 'HomeController@index']);
+	'uses' => 'RequeteController@index'
+	/*'middleware'=>'auth'*/]);
 
-Route::get('themes/{id}/soustheme', [
-	'as' => 'soustheme',
-	'uses' => 'HomeController@soustheme']);
+Route::get('/wali', [
+	'as' => 'wali',
+	'uses' => 'RequeteController@indexw'
+	/*'middleware'=>'auth'*/]);
+
+Route::get('entites/{id}/sousentites', [
+	'as' => 'sousentites',
+	'uses' => 'RequeteController@get_sousentites'
+	/*'middleware'=>'auth'*/]);
+
+Route::get('themes/{id}/sousthemes', [
+	'as' => 'sousthemes',
+	'uses' => 'RequeteController@get_sousthemes'
+	/*'middleware'=>'auth'*/]);
 
 Route::get('auth/login', [
 	'as' => 'login',
-	'uses' => 'Auth\AuthController@getLogin()']);
+	'uses' => 'Auth\AuthController@getLogin'
+	/*'middleware'=>'auth'*/]);
 
-Route::post('auth/login', [
+Route::post('/validatelogin', [
 	'as' => 'validatelogin',
-	'uses' => 'Auth\AuthController@postLogin()']);
+	'uses' => 'Auth\AuthController@postLogin'
+	/*'middleware'=>'auth'*/]);
 
 Route::get('auth/logout', [
 	'as' => 'logout',
-	'uses' => 'Auth\AuthController@getLogout()']);
+	'uses' => 'Auth\AuthController@getLogout'
+	/*'middleware'=>'auth'*/]);
 
-Route::post('/AddRequete', [
-	'as' => 'AddRequete',
-	'user' => 'HomeController@createrequete'
+Route::post('/createrequete', [
+	'as' => 'createrequete',
+	'uses' => 'RequeteController@store'
+	/*'middleware'=>'auth'*/]);
+
+Route::get('/admin',[
+		'as' => 'adminhome',
+		'uses' => 'AdminController@index'
 	]);
+
+Route::post('/admin/create_theme',[
+		'as' => 'createtheme',
+		'uses' => 'AdminController@createtheme'
+	]);
+
 
 /*Route::get('/', [
 	'as' => 'listLink',
