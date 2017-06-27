@@ -28,10 +28,10 @@
 										<label class="" style="margin-top: 13px;">N° C.S.T.R: <small>*</small></label>
 									</td>
 									<td>
-										<input name="numcstr" type="text" class="form-control">
+										<input name="requete[NumCSTR]" type="text" class="form-control">
 									</td>
 									<td >
-										<select class="form-control" id="annee" name="annee" onchange="">
+										<select class="form-control" id="annee" name="requete[annee]" onchange="">
 											<option>2017</option>
 											<option>2016</option>
 											<option>2015</option>
@@ -46,7 +46,7 @@
 										<label class="" style="margin-top: 13px;">N° d’ordre : <small>*</small></label>
 									</td>
 									<td>
-										<input name="numordre" type="text" class="form-control">
+										<input name="requete[NumOrdre]" type="text" class="form-control">
 									</td>
 								</tr>
 
@@ -58,7 +58,7 @@
 										<label class="" style="margin-top: 13px;">Date d’arrivé au C.S.T.R : <small>*</small></label>
 									</td>
 									<td style="float: inherit;width: 149px;margin: auto;">
-										<input name="datearcstr" type="date" class="form-control" style="margin-left: 17px;width: 149px;">
+										<input name="requete[DateCSTR]" type="date" class="form-control" style="margin-left: 17px;width: 149px;">
 									</td>
 								</tr>
 
@@ -67,7 +67,7 @@
 										<label class="" style="margin-top: 13px;">Date d’arrivé au BO : <small>*</small></label>
 									</td>
 									<td style="float: inherit;width: 149px;margin: auto;">
-										<input name="datearbo" type="date" class="form-control" style="margin-left: 17px;width: 149px;">
+										<input name="requete[DateBO]" type="date" class="form-control" style="margin-left: 17px;width: 149px;">
 									</td>
 								</tr>
 
@@ -82,7 +82,7 @@
 										<label class="" style="margin-top: 13px;">Objet : <small>*</small></label>
 									</td>
 									<td style="width: 244px">
-										<textarea name="objet" id="objet" class="form-control" style="width: 260px;height: 82px;"></textarea>
+										<textarea name="requete[ObjetReq]" id="objet" class="form-control" style="width: 260px;height: 82px;    margin-left: 11px;"></textarea>
 									</td>
 								</tr>
 
@@ -95,7 +95,7 @@
 										<label class="" style="margin-top: 13px;">Thème : <small>*</small></label>
 									</td>
 									<td>
-										<select class="form-control" id="theme" name="theme" onchange="getsubsstheme(this.value)">
+										<select class="form-control" id="theme" name="requete[IDTheme]" onchange="getsubsstheme(this.value)">
 											<option></option> 
 											@foreach($themes as $theme)
 											<option value="{{$theme->IDTheme}}">{{$theme->LibTheme}}</option> 
@@ -109,7 +109,7 @@
 										<label class="" style="margin-top: 13px;">Sous thème : <small>*</small></label>
 									</td>
 									<td>
-										<select class="form-control" id="soustheme" name="soustheme" onchange="">
+										<select class="form-control" id="soustheme" name="requete[IDSousTheme]" onchange="">
 											<option></option> 
 										</select>
 									</td>
@@ -133,7 +133,7 @@
 							</div>
 
 							<div class="inp">
-								<input name="contrequi" type="text" class="form-control">
+								<input name="requete[ContreQui]" type="text" class="form-control">
 							</div>
 						</div>
 						<div class="tabcentre" style="margin-left: 67px;">
@@ -142,7 +142,7 @@
 							</div>
 
 							<div class="inp1">
-								<textarea name="resume" class="form-control" style="height: 80px;"></textarea>
+								<textarea name="requete[Resume]" class="form-control" style="height: 80px;"></textarea>
 							</div>
 						</div>
 
@@ -152,7 +152,7 @@
 									<label class="">District/Cercle/Region : <small>*</small></label>
 								</td>
 								<td>
-									<select class="form-control" id="DSR" name="DSR" onchange="getsubssentite(this.value)" style="margin-bottom: 6px;width: 192px;">
+									<select class="form-control" id="DSR" name="requete[IDEntite]" onchange="getsubssentite(this.value)" style="margin-bottom: 6px;width: 192px;">
 										<option></option> 
 										@foreach($entites as $entite)
 										<option value="{{$entite->IDEntite}}">{{$entite->LibEntite}}</option> 
@@ -168,7 +168,7 @@
 									<label class="">Annexe/Caïdat/Préfécture : <small>*</small></label>
 								</td>
 								<td style="width: 110px;">
-									<select class="form-control" id="DSR_ACP" name="ACP" onchange="" style="margin-bottom: 10px;">
+									<select class="form-control" id="DSR_ACP" name="requete[IDSousEntite]" onchange="" style="margin-bottom: 10px;">
 										<option></option> 
 									</select>
 								</td>
@@ -193,7 +193,7 @@
 							<?php $tab = ['divFrmpp','divFrmmm','divFrmcc'] ?>
 							@foreach($typerequerants as $index => $typerequerant)
 								<span id="lp" style="width: 24%"><label for="pp">{{$typerequerant->LibType}}  </label>
-									<input type="radio" onclick="display('{{$tab[$index]}}')" name="Expediteur" id="pp" value="p" {{($index==0)? "checked":""}}>
+									<input type="radio" onclick="display('{{$tab[$index]}}')" name="requete[IDTypeRequerant]" id="pp" value="{{$typerequerant->IDTypeRequerant}}" {{($index==0)? "checked":""}}>
 								</span>
 							@endforeach
 						</div>

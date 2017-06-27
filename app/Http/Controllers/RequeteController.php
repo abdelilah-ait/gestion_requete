@@ -7,6 +7,8 @@ use gestion_requete\Entite;
 use gestion_requete\TypeRequerant;
 use gestion_requete\CategorieRequerant;
 use gestion_requete\Statut;
+use gestion_requete\SecteurActivite;
+use gestion_requete\Requete;
 
 use Illuminate\Http\Request;
 
@@ -32,7 +34,8 @@ class RequeteController extends Controller {
 		$categorierequerants_mm = CategorieRequerant::where('IDTypeRequerant','=',2)->get();
 		$categorierequerants_cc = CategorieRequerant::where('IDTypeRequerant','=',3)->get();
 		$statuts = Statut::all();
-		return view('visual/home', compact('themes','entites','typerequerants','categorierequerants','categorierequerants_pp','categorierequerants_mm','categorierequerants_cc','statuts'));
+		$secteur_activites = SecteurActivite::all();
+		return view('visual/home', compact('themes','entites','typerequerants','categorierequerants','categorierequerants_pp','categorierequerants_mm','categorierequerants_cc','statuts','secteur_activites'));
 		 return view('visual/esp_wali');
 	}
 	public function indexw(Request $request)
@@ -74,7 +77,18 @@ class RequeteController extends Controller {
 
 		//     return $user;
 
-		var_dump($request);
+		$new_num_cstr = $request['requete']['NumCSTR']."/".$request['requete']['annee'];
+
+
+		$attributes = $request->all();
+		$attributes['requete']['NumCSTR'] = $new_num_cstr;
+
+		// die($attributes['requete']['NumCSTR']);
+
+		Requete::create($attributes['requete']);
+
+		// $request['requete']->merge(array('NumCSTR' => implode("/", [$request['requete']['NumCSTR'], $request['requete']['annee']])));
+
 		// $requete = new Requete();
 		// $requete->NumCSTR = $request->input('numcstr');
 		// $requete->NumOrdre = $request->input('numordre');

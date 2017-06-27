@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="inpnc" style="margin-left: 29px;width: 494px;">
-			<input name="raisonsociale" type="text" class="form-control">
+			<input name="requerant[RaisonSociale]" type="text" class="form-control">
 		</div>
 	</div>
 
@@ -17,7 +17,7 @@
 							<label>Téléphone : <small>*</small></label>
 						</div>	
 						<div class="inpncar" style="margin-left: 11px;width: 146px;">
-							<input name="telephone" type="text" class="form-control">
+							<input name="requerant[Tel]" type="text" class="form-control">
 						</div>
 					</td>
 
@@ -26,7 +26,7 @@
 							<label>E-mail : <small>*</small></label>
 						</div>	
 						<div class="inpncar" style="width: 215px;">
-							<input name="e_mail" type="text" class="form-control">
+							<input name="requerant[Email]" type="text" class="form-control">
 						</div>
 					</td>
 
@@ -41,7 +41,7 @@
 						<label>Adresse : <small>*</small></label>
 					</td>
 					<td style="">
-						<textarea name="adresse" class="form-control" style="height: 66px;"></textarea>
+						<textarea name="requerant[Adresse]" class="form-control" style="height: 66px;"></textarea>
 					</td>
 				</tr>
 			</table>
@@ -55,7 +55,7 @@
 						<label>Fax : <small>*</small></label>
 					</div>	
 					<div class="inpncar" style="width: 166px;margin-right: 50px;">
-						<input name="fax" type="text" class="form-control">
+						<input name="requerant[Fax]" type="text" class="form-control">
 					</div>
 				</td>
 				<td>
@@ -63,8 +63,11 @@
 						<label>Secteur d'activité : <small>*</small></label>
 					</div>	
 					<div class="inpncar" style="width: 124px;">
-						<select class="form-control" id="secteur_activite" name="secteur_activite">
+						<select class="form-control" id="secteur_activite" name="requerant[IdSecteurActivite]">
 							<option>Choisissez vous</option> 
+							@foreach($secteur_activites as $secteur_activite)
+							<option value="{{$secteur_activite->IdSecteurActivite}}">{{$secteur_activite->Secteur_activite}}</option> 
+							@endforeach
 						</select>
 					</div>
 				</td>
@@ -80,7 +83,7 @@
 						<label>Représentant : <small>*</small></label>
 					</div>	
 					<div class="inpncar" style="width: 137px;margin-right: 50px;">
-						<input name="representant" type="text" class="form-control">
+						<input name="requerant[Representant]" type="text" class="form-control">
 					</div>
 				</td>
 
@@ -89,7 +92,7 @@
 						<label>Télé Représentant : <small>*</small></label>
 					</div>	
 					<div class="inpncar" style="width: 124px;">
-						<input name="tele_representant" type="text" class="form-control">
+						<input name="requerant[tele_representant]" type="text" class="form-control">
 					</div>
 				</td>
 			</tr>
@@ -103,7 +106,7 @@
 					<label>Adresse Représentant: <small>*</small></label>
 				</td>
 				<td style="">
-					<textarea name="adresse_representant" class="form-control" style="height: 66px;width: 468px;"></textarea>
+					<textarea name="requerant[adresse_representant]" class="form-control" style="height: 66px;width: 468px;"></textarea>
 				</td>
 			</tr>
 		</table>
@@ -117,10 +120,10 @@
 						<label>Type : <small>*</small></label>
 					</div>	
 					<div class="inpncar" style="width: 166px;margin-right: 50px;">
-						<select class="form-control" id="categorierequerant" name="categorierequerant" onchange="getnumser(this.value)">
+						<select class="form-control" id="categorierequerant" name="requerant[IDCategorieRequerant]" onchange="">
 							<option>Choisissez vous</option> 
 							@foreach($categorierequerants_mm as $categorierequerant_mm)
-							<option id="{{$categorierequerant_mm->IDCategorieRequerant}}">{{$categorierequerant_mm->LibCategorie}}</option> 
+							<option value="{{$categorierequerant_mm->IDCategorieRequerant}}">{{$categorierequerant_mm->LibCategorie}}</option> 
 							@endforeach
 
 						</select>
@@ -132,7 +135,7 @@
 						<label>Pays : <small>*</small></label>
 					</div>	
 					<div class="inpncar" style="width: 166px;">
-						<select class="form-control" id="country2" name="country2" onchange="">
+						<select class="form-control" id="country2" name="requerant[Nationalite]" onchange="">
 							<option>Choisissez vous</option> 
 						</select>
 					</div>
